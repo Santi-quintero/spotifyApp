@@ -1,0 +1,9 @@
+<div class="m-5">
+    <div class="row">
+        <div class="col">
+            <input type="text"  class="form-control" placeholder="Buscar Artista..." #hola (keyup)="Search(hola.value)">
+        </div>
+    </div>
+</div>
+<app-loading [isVisible]="loading"></app-loading>
+<app-tarjetas [items]="artistas"></app-tarjetas>

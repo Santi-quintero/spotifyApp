@@ -1,0 +1,51 @@
+<app-loading [isVisible]="loading"></app-loading>
+<div class="container">
+<div class="row animated fadeIn mt-5" *ngIf="!loading">
+    <div class="col-2">
+        <img [src]="artist.images | noimage" class="img-thumbnail">
+    </div>
+    <div class="col">
+        <h3>{{artist.name}}</h3>
+        <p>
+            <a class="btn btn-primary" data-toggle="collapse" target="_blank" [href]="artist.external_urls.spotify"  role="button" aria-expanded="false" aria-controls="collapseExample">
+                Ir a la pagina del artista
+              </a>
+        </p>
+    </div>
+    <div class="col-4">
+        <button class="btn btn-outline-danger"
+        routerLink="/" style="float: right;">
+        Regresar
+        </button>
+    </div>
+</div>
+
+    <div class="row animated fadeIn mt-5">
+        <div class="col">
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th>Foto</th>
+                        <th>Cancion</th>
+                        <th>Album</th>
+                        <th>Vista previa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let track of topTracks">
+                        <td>
+                            <img [src]="track.album.images | noimage" style="width: 20%; height: 20%;">
+                        </td>
+                        <td>{{track.album.name}}</td>
+                        <td>{{track.name}}</td>
+                        <td>
+                            <audio [src]="track.preview_url" controls></audio>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+

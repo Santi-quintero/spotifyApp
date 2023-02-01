@@ -1,0 +1,21 @@
+<div class="m-5" style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 18px;">
+    <div
+    class="card"
+    style="width: 18rem; cursor: pointer;"
+    *ngFor="let item of items"
+>
+    <img
+        (click)="viewArtist(item)"
+        src="{{item.images | noimage}}"
+        class="card-img-top"
+        alt="..."
+    >
+    <div class="card-body">
+        <h5 class="card-title">{{item.name}}</h5>
+        <p class="card-text">
+            <span *ngFor="let artista of item.artists" class="badge text-bg-primary">{{artista.name}}</span>
+        </p>
+    </div>
+</div>
+
+</div>

@@ -1,0 +1,11 @@
+<app-loading [isVisible]="loading"></app-loading>
+
+<div class="container mt-5">
+    <div *ngIf="error" class="alert alert-danger" role="alert">
+        <h3>Error</h3>
+        <p>
+            {{ mensajeError}}
+        </p>
+      </div>
+</div>
+<app-tarjetas [items]="newsCanciones"></app-tarjetas>
